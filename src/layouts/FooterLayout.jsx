@@ -20,7 +20,7 @@ const FooterLayout = () => {
           >
             <img src="/image/whatsapp.png" width="20" height="20"/>
           </a>
-          <div>© 2022 Copyright: Sela Aulia Siswanto</div>
+          <div>© 2022 Copyright: Gase Thrifting</div>
         </Col>
       </Row>
     </>

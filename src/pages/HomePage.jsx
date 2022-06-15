@@ -1,48 +1,70 @@
 import React, { Component } from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Card, Button } from "react-bootstrap";
 
 export default class HomePage extends Component {
   render() {
     return (
-      <Carousel>
+      <Carousel variant="dark">
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://tse2.mm.bing.net/th?id=OIP.oMa8DwtjailZpqkK1RlQ-gHaE8&pid=Api&P=0&w=229&h=153"
+            src="https://www.thespruce.com/thmb/1dvNcTNl4LRTtFyuZWJeYzpXSng=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/wash-new-clothes-before-wearing-2146345-03-999483b3d51a435ba53c8d9ef5c2d5c4.jpg"
             alt="First slide"
+            height="450px"
+            left="50px"
+            top="120px"
+            border-radius="50px"
           />
           <Carousel.Caption>
             <h3>Welcome to Our Market</h3>
-            <p>get ease life with us</p>
+            <p>Affordable places to shop vintage and secondhand clothing online</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://s4.bukalapak.com/bukalapak-kontenz-production/content_attachments/28769/w-1480/shutterstock_644074321_1_.jpg.webp"
+            src="https://i.pinimg.com/564x/4e/2b/a9/4e2ba9b9a1863b00389fd9d55bc35274.jpg"
             alt="Second slide"
+            height="450px"
+            width="1500px"
+            left="50px"
+            top="120px"
+            border-radius="50px"
           />
-
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Welcome to Our Market</h3>
+            <p>Affordable places to shop vintage and secondhand clothing online</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://cdn.popmama.com/content-images/post/20181204/img-04122018-124548-800-x-420-pixel-5bb66b52269d415be62f21b11fc13608.jpg"
+            src="https://makecalmlovely.com/wp-content/uploads/Clothes-hanging-scaled.jpg"
             alt="Third slide"
+            height="450px"
+            width="1500px"
+            left="50px"
+            top="120px"
+            border-radius="50px"
           />
-
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>Welcome to Our Market</h3>
+            <p>Affordable places to shop vintage and secondhand clothing online</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+    );
+    return (
+      <Card>
+      <Card.Header>Product</Card.Header>
+      <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>
+          With supporting text below as a natural lead-in to additional content.
+        </Card.Text>
+        <Button variant="primary">All Product</Button>
+      </Card.Body>
+      </Card>
     );
   }
 }

@@ -8,7 +8,7 @@ const MainLayout = () => {
   return (
     <>
         <HeaderLayout/>
-        <Container className="py-2" style={{ minHeight: "10vh"}}>
+        <Container fluid="md" className="py-4" style={{ minHeight: "100vh"}} >
             <Outlet/>
         </Container>
         <FooterLayout/>
