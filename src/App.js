@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import React, { useState } from "react";
 import { AuthContext } from "./index";
+import EditFeedback from "./component/EditFeedback";
 
 function App() {  
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<HomePage/>}></Route>
           <Route path="/feedback" element={<Feedback/>}></Route>
           <Route path="/contact" element={<ContactPage/>}></Route>
+          <Route path="/contact/edit/:uid" element={<EditFeedback/>}></Route>
           <Route path="product" element={<ProductPage />}>
               <Route index element={<ListProduct />} />
               <Route path=":id" element={<ProductDetailPage />} />
