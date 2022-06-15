@@ -8,7 +8,7 @@ const Header = () => {
       <Container fluid>
         <Navbar.Brand href="#">
           <img
-            src="/image/logo.png"
+            src="/images/Logo.png"
             width="50"
             height="50"
             className="d-inline-block align-top"
@@ -23,8 +23,8 @@ const Header = () => {
           >
             <Nav.Link as={Link} to="/"><span>Home</span></Nav.Link>
             <Nav.Link as={Link} to="/product"><span>Product</span></Nav.Link>
-            <Nav.Link as={Link} to="/cart"><span>Cart</span></Nav.Link>
-            <Nav.Link as={Link} to="/about"><span>About</span></Nav.Link>
+            <Nav.Link as={Link} to="/cart"><span>Category</span></Nav.Link>
+            <Nav.Link as={Link} to="/about"><span>About Us</span></Nav.Link>
           </Nav>
           <Form className="d-flex">
             <FormControl

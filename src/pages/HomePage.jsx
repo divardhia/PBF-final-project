@@ -8,7 +8,7 @@ export default class HomePage extends Component {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2018/10/07/322465677.png"
+            src="https://tse2.mm.bing.net/th?id=OIP.oMa8DwtjailZpqkK1RlQ-gHaE8&pid=Api&P=0&w=229&h=153"
             alt="First slide"
           />
           <Carousel.Caption>
