@@ -20,12 +20,10 @@ const EditProduct = () => {
     }, []);
 
     const getProduct = () => {
-        console.log(uid);
         auth.setLoggedIn(true);
         onValue(ref(db, `/product/${uid}`), snapshot => {
             const state = snapshot.val();
             if (state !== null) {
-                console.log(state);
                 setNama(state.nama);
                 setUkuran(state.ukuran);
                 setStok(state.stok);

@@ -40,7 +40,7 @@ const ProductPage = () => {
       {console.log(productData)}
       
       <div className="container">
-      <Link to="/add/product" className='btn btn-primary btn-lg'>Add New</Link>
+      <Link to="/add/product" className='btn btn-dark btn-lg'>Add New</Link>
         {
           <Card product={productData} hapus={deleteProduct} />
         }
