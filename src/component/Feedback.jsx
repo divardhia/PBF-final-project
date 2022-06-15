@@ -13,12 +13,12 @@ const Feedback = () => {
         let uid = new Date().getTime().toString();
         console.log(uid);
         try {
-            set(ref(db, `/contacts/${uid}`), { nama, email, pesan });
+            set(ref(db, `/contacts/${uid}`), { uid, nama, email, pesan });
         } catch (error) {
             console.log(error.message);
         }
         
-        navigate("/");
+        navigate("/contact");
     }
 
     return (

@@ -55,9 +55,7 @@ const HomePage = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Feedback>
-
-      </Feedback>
+      <Feedback />
       </>
       
     );

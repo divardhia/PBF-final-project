@@ -6,12 +6,16 @@ import ListProduct from "./pages/ListProduct";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CategoryPage from "./pages/CategoryPage";
 import AboutPage from "./pages/AboutPage";
+import Feedback from "./component/Feedback";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage/>}></Route>
+        <Route path="/feedback" element={<Feedback/>}></Route>
+        <Route path="/contact" element={<ContactPage/>}></Route>
         <Route path="product" element={<ProductPage />}>
             <Route index element={<ListProduct />} />
             <Route path=":id" element={<ProductDetailPage />} />
