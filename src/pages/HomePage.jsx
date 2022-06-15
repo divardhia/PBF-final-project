@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import { useState } from "react";
 import { Carousel, Card, Button } from "react-bootstrap";
+import Feedback from "../component/Feedback";
 
-export default class HomePage extends Component {
-  render() {
+const HomePage = () => {
     return (
+      <>
       <Carousel variant="dark">
         <Carousel.Item>
           <img
@@ -54,6 +55,11 @@ export default class HomePage extends Component {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <Feedback>
+
+      </Feedback>
+      </>
+      
     );
     return (
       <Card>
@@ -68,4 +74,5 @@ export default class HomePage extends Component {
       </Card>
     );
   }
-}
+
+  export default HomePage;
