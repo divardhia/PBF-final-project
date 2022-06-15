@@ -1,8 +1,14 @@
-import { useState } from "react";
+import React, { useContext } from "react";
+import { Navigate } from 'react-router-dom';
 import { Carousel, Card, Button } from "react-bootstrap";
 import Feedback from "../component/Feedback";
+import { AuthContext } from "..";
 
 const HomePage = () => {
+  const auth = useContext(AuthContext);
+  if(auth.isLoggedIn === false) {
+    return <Navigate to='/login'/>
+  } else {
     return (
       <>
       <Carousel variant="dark">
@@ -59,18 +65,20 @@ const HomePage = () => {
       </>
       
     );
-    return (
-      <Card>
-      <Card.Header>Product</Card.Header>
-      <Card.Body>
-        <Card.Title>Special title treatment</Card.Title>
-        <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
-        </Card.Text>
-        <Button variant="primary">All Product</Button>
-      </Card.Body>
-      </Card>
-    );
+  }
+   
+    // return (
+    //   <Card>
+    //   <Card.Header>Product</Card.Header>
+    //   <Card.Body>
+    //     <Card.Title>Special title treatment</Card.Title>
+    //     <Card.Text>
+    //       With supporting text below as a natural lead-in to additional content.
+    //     </Card.Text>
+    //     <Button variant="primary">All Product</Button>
+    //   </Card.Body>
+    //   </Card>
+    // );
   }
 
   export default HomePage;
