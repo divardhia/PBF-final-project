@@ -10,7 +10,7 @@ export default class AboutPage extends Component {
             <Card.Header>About Our Market</Card.Header>
             <Card.Body>
               <Card.Title>GASE THRIFTING</Card.Title>
-              <Image src="./images/Logo.png" width="300px" height="300px" />
+              <Image className="w-50" src="./images/Logo.png" style={{width:"300px", height:"300px", marginLeft:"25%"}} />
               <Card.Text>
                 Established since 2021. <br></br>
                 Providing used clothes with good quality and affordable prices.{" "}
