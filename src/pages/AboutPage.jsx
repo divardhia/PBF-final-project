@@ -7,19 +7,20 @@ export default class AboutPage extends Component {
       <>
         <Row>
           <Col md={2}>
-            <Image src="./image/sela.png" width="350px" height="350px" />
+            <Image src="./images/Logo.png" width="300px" height="300px" />
           </Col>
           <Col className="text-center">
-            <h1 className="fw-bold m-0">ABOUT ME</h1>
+            <h1 className="fw-bold m-0">ABOUT OUR MARKET</h1>
             <Row>
               <Col md={8} className="text-start"></Col>
               <ListGroup>
-              <h4 className="fw-bold m-0" text-color="#DEB887">SELA AULIA SISWANTO</h4>
-              <p className="m-0">NIM        : 1941720196</p>
-              <p className="m-0">Class      : TI-3C</p>
-              <p className="m-0">Department : Informatic Technology</p>
-              <p className="m-0">Email      : 1941720196@student.polinema.ac.id</p>
-              <p className="m-0">Address    : Jetis, Mojokerto</p>
+              <h4 className="fw-bold m-0" text-color="#DEB887">GASE THRIFTING</h4>
+              <p className="m-0">Established since 2021</p>
+              <p className="m-0">Providing used clothes with good quality and affordable prices.</p>
+              <p className="m-0">The clothes for sale are clean and smell good</p>
+              <p className="m-0">Ready to use</p>
+              <h4 className="m-0">Take Care of The Earth</h4>
+              <h4 className="m-0">By Using Second Clothes</h4>
               </ListGroup>
             </Row>
           </Col>

@@ -19,11 +19,12 @@ export default class HomePage extends Component {
             <h3>Welcome to Our Market</h3>
             <p>Affordable places to shop vintage and secondhand clothing online</p>
           </Carousel.Caption>
+
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://i.pinimg.com/564x/4e/2b/a9/4e2ba9b9a1863b00389fd9d55bc35274.jpg"
+            src="https://i.pinimg.com/564x/fa/5a/94/fa5a94179579000200683ca489e97f86.jpg"
             alt="Second slide"
             height="450px"
             width="1500px"
@@ -39,7 +40,7 @@ export default class HomePage extends Component {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://makecalmlovely.com/wp-content/uploads/Clothes-hanging-scaled.jpg"
+            src="https://i.pinimg.com/564x/8f/62/25/8f6225db6f43ea6dffb5bbabda05421f.jpg"
             alt="Third slide"
             height="450px"
             width="1500px"

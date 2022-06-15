@@ -11,14 +11,14 @@ const FooterLayout = () => {
             href="https://instagram.com/selaaulia_"
             role="button"
           >
-            <img src="/image/instagram.png" width="25" height="25"/>
+            <img src="/images/instagram.png" width="25" height="25"/>
           </a>
           <a
             class="btn-floating m-1"
             href="https://web.whatsapp.com/"
             role="button"
           >
-            <img src="/image/whatsapp.png" width="20" height="20"/>
+            <img src="/images/whatsapp.png" width="20" height="20"/>
           </a>
           <div>© 2022 Copyright: Gase Thrifting</div>
         </Col>

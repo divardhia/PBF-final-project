@@ -34,7 +34,7 @@ const Header = () => {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-          </Form>
+          </Form> 
         </Navbar.Collapse>
       </Container>
     </Navbar>
