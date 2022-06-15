@@ -16,11 +16,9 @@ const EditFeedback = () => {
     }, []);
 
     const getFeedback = () =>{
-        console.log(uid);
         onValue(ref(db, `/contacts/${uid}`), snapshot => {
             const state = snapshot.val();
             if (state !== null) {
-                console.log(state);
                 setNama(state.nama);
                 setEmail(state.email);
                 setPesan(state.pesan);
