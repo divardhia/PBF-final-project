@@ -9,7 +9,6 @@ const Category = () => {
 
     const saveCategory = () => {
         let uid = new Date().getTime().toString();
-        console.log(uid);
         try {
             set(ref(db, `/category/${uid}`), { uid, namaCategory });
         } catch (error) {

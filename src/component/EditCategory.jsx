@@ -14,7 +14,6 @@ const EditCategory = () => {
     }, []);
 
     const getCategory = () =>{
-        console.log(uid);
         onValue(ref(db, `/category/${uid}`), snapshot => {
             const state = snapshot.val();
             if (state !== null) {

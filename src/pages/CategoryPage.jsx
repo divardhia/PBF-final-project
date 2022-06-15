@@ -32,7 +32,7 @@ const CategoryPage = () => {
     return (
         <>
             <h3>List Category</h3>
-            <Link to={`form_category`} className='btn btn-info btn-sm'>Tambah</Link>
+            <Link to={`form_category`} className='btn btn-dark btn-sm'>Tambah</Link>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -51,7 +51,7 @@ const CategoryPage = () => {
                                         {item.namaCategory}
                                     </td>
                                     <td>
-                                        <Link to={`/category/edit/${item.uid}`} className='btn btn-info btn-sm'>Edit</Link>
+                                        <Link to={`/category/edit/${item.uid}`} className='btn btn-warning btn-sm'>Edit</Link>
                                         <button className="btn btn-danger btn-sm" onClick={() => { if (window.confirm('Apakah anda yakin menghapus Category ini?')) handleHapusCategory(item.uid) }}>Delete</button>
                                     </td>
                                 </tr>
