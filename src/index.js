@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
+export const AuthContext = React.createContext(null);
 root.render(
     <BrowserRouter>
         <Routes>
