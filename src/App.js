@@ -16,6 +16,8 @@ import React, { useState } from "react";
 import { AuthContext } from "./index";
 import EditFeedback from "./component/EditFeedback";
 import Logout from "./component/Logout";
+import AddProduct from "./component/AddProduct";
+import EditProduct from "./component/EditProduct";
 
 function App() {  
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -27,7 +29,9 @@ function App() {
           <Route path="/feedback" element={<Feedback/>}></Route>
           <Route path="/contact" element={<ContactPage/>}></Route>
           <Route path="/contact/edit/:uid" element={<EditFeedback/>}></Route>
-          <Route path="product" element={<ProductPage />}>
+          <Route path="/edit/product/:uid" element={<EditProduct/>}></Route>
+          <Route path="/add/product" element={<AddProduct/>}></Route>
+          <Route path="/product" element={<ProductPage />}>
               <Route index element={<ListProduct />} />
               <Route path=":id" element={<ProductDetailPage />} />
             </Route>
