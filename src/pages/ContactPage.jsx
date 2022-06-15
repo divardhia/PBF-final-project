@@ -53,7 +53,7 @@ const ContactPage = () => {
                                     <td>{item.email}</td>
                                     <td>{item.pesan}</td>
                                     <td>
-                                        <Link to={`/contact/edit/${item.uid}`} className='btn btn-info btn-sm'>Edit</Link>
+                                        <Link to={`/contact/edit/${item.uid}`} className='btn btn-warning btn-sm'>Edit</Link>
                                         <button className="btn btn-danger btn-sm" onClick={() => { if (window.confirm('Apakah anda yakin menghapus contact ini?')) handleHapusContact(item.uid) }}>Delete</button>
                                     </td>
 
