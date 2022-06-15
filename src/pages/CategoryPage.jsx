@@ -39,7 +39,7 @@ const CartPage = () => {
                 <td>{key + 1}</td>
                 <td>
                   <img
-                    src={"/image/" + item.images[0].img}
+                    src={"/images/" + item.images[0].img}
                     alt=""
                     style={{ width: "100px" }}
                   />
