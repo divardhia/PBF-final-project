@@ -13,12 +13,12 @@ import Register from "./pages/Register";
 import React, { useState } from "react";
 import { AuthContext } from "./index";
 import EditFeedback from "./component/EditFeedback";
+import Logout from "./component/Logout";
 
 function App() {  
   const [isLoggedIn, setLoggedIn] = useState(false);
   return (
     <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
-      Is logged in? {JSON.stringify (isLoggedIn)}
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage/>}></Route>
@@ -32,6 +32,7 @@ function App() {
           <Route path="/cart" element={<CategoryPage />}></Route>
           <Route path="/about" element={<AboutPage />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/logout" element={<Logout />}></Route>
           <Route path="/register" element={<Register />}></Route>
         </Route>
       </Routes>

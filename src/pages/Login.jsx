@@ -1,40 +1,42 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../index";
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import { auth_firebase } from "../firebase/config";
+import { useNavigate } from 'react-router-dom';
 import "../style.css";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     const [error, setErrors] = useState("");
+    const navigate = useNavigate();
 
     const Auth = useContext(AuthContext);
     const handleForm = e => {
         e.preventDefault();
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(email, password)
+        auth_firebase
+            .signInWithEmailAndPassword(auth_firebase.getAuth(),email, password)
             .then(res => {
                 if (res.user) Auth.setLoggedIn(true);
+                navigate('/');
             })
             .catch(e => {
+                console.log(e.message)
                 setErrors(e.message);
             })
     }
 
-    const googleProvider = new firebase.auth.GoogleAuthProvider();
-    const loginGoogle = e => {
+    const loginWithGoogle = e => {
         e.preventDefault();
-        firebase
-            .auth()
-            .signInWithPopup(googleProvider)
-            .then(res => {
-                if(res.user) Auth.setLoggedIn(true);
-            })
-            .catch(e => {
-                setErrors(e.message);
-            })
+        const provider = new auth_firebase.GoogleAuthProvider();
+        provider.setCustomParameters({ prompt: 'select_account' });
+        auth_firebase.signInWithPopup(auth_firebase.getAuth(), provider)
+        .then(res => {
+            if(res.user) Auth.setLoggedIn(true);
+            navigate('/');
+        })
+        .catch(e => {
+            setErrors(e.message);
+        });
     }
 
     return (
@@ -56,7 +58,7 @@ const Login = () => {
                     placeholder="password"
                 />
                 <hr />
-                <button className="googleBtn" type="button" onClick={e => loginGoogle(e)}>
+                <button className="googleBtn" type="button" onClick={e => loginWithGoogle(e)}>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="logo" />
                     Login With Google
                 </button>
