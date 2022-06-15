@@ -7,8 +7,6 @@ const Header = () => {
   const auth = useContext(AuthContext);
   if (auth.isLoggedIn == true) {
     return (
-      <>
-        {console.log(auth.isLoggedIn)}
         <Navbar bg="dark" variant="dark" expand="lg">
           <Container fluid>
             <Navbar.Brand href="#">
@@ -30,11 +28,14 @@ const Header = () => {
                 <Nav.Link as={Link} to="/product"><span>Product</span></Nav.Link>
                 <Nav.Link as={Link} to="/list_category"><span>Category</span></Nav.Link>
                 <Nav.Link as={Link} to="/about"><span>About Us</span></Nav.Link>
-                {auth.isLoggedIn ? <Nav.Link as={Link} to="/logout"><span>Logout</span></Nav.Link> :
-                  <Nav.Link as={Link} to="/login"><span>Login</span></Nav.Link>}
                 <Nav.Link as={Link} to="/contact"><span>Contact</span></Nav.Link>
               </Nav>
-              <Form className="d-flex">
+                {auth.isLoggedIn ? <Button variant="light" size="sm"><Nav.Link as={Link} to="/logout" className="text-dark"><span>Logout</span></Nav.Link></Button> :
+                  <Nav.Link as={Link} to="/login"><span>Login</span></Nav.Link>}
+              <Nav>
+                
+              </Nav>
+              {/* <Form className="d-flex">
                 <FormControl
                   type="search"
                   placeholder="Search"
@@ -42,11 +43,10 @@ const Header = () => {
                   aria-label="Search"
                 />
                 <Button variant="outline-success">Search</Button>
-              </Form>
+              </Form> */}
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </>
     );
   }
   else {
