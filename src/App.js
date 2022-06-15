@@ -5,6 +5,8 @@ import ProductPage from "./pages/ProductPage";
 import ListProduct from "./pages/ListProduct";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CategoryPage from "./pages/CategoryPage";
+import Category from "./component/Category";
+import EditCategory from "./component/EditCategory";
 import AboutPage from "./pages/AboutPage";
 import Feedback from "./component/Feedback";
 import ContactPage from "./pages/ContactPage";
@@ -29,10 +31,12 @@ function App() {
               <Route index element={<ListProduct />} />
               <Route path=":id" element={<ProductDetailPage />} />
             </Route>
-          <Route path="/cart" element={<CategoryPage />}></Route>
           <Route path="/about" element={<AboutPage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/list_category" element={<CategoryPage />}></Route>
+          <Route path="/list_category/form_category" element={<Category />}></Route>
+          <Route path="/category/edit/:uid" element={<EditCategory/>}></Route>
         </Route>
       </Routes>
     </AuthContext.Provider>

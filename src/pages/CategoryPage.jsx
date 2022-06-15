@@ -1,64 +1,73 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
+import { db } from "../firebase/config";
+import { Link } from "react-router-dom";
+import { onValue, ref, remove } from "firebase/database";
 
-const CartPage = () => {
-  const [carts, setCarts] = useState([]);
+const no =1;
+const CategoryPage = () => {
+    const [category, setCategory] = useState([]);
 
-  useEffect(() => {
-    const getCarts = () => {
-      fetch("http://localhost:3002/carts")
-        .then((res) => res.json())
-        .then((json) => {
-          setCarts(json);
-        })
-        .catch((err) => {
-          console.log(err);
+    const handleHapusCategory = (idCategory) => {        // fungsi yang meng-handle button action hapus data
+        remove(ref(db, `/category/${idCategory}`));
+    }
+
+    const getCategory = () => {
+        onValue(ref(db, "/category/"), snapshot => {
+            const state = snapshot.val();
+            if (state !== null) {
+                const arr = Object.values(state);
+                setCategory(arr);
+            } else {
+                setCategory([]);
+            }
+            console.log(category);
         });
     };
 
-    getCarts();
-  }, []);
+    useEffect(() => {
+        getCategory();
+    }, []);
 
-  return (
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Image</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>QTY</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        {carts.length > 0 ? (
-          carts.map((item, key) => {
-            return (
-              <tr key={key}>
-                <td>{key + 1}</td>
-                <td>
-                  <img
-                    src={"/images/" + item.images[0].img}
-                    alt=""
-                    style={{ width: "100px" }}
-                  />
-                </td>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td>{item.qty}</td>
-                <td>{item.total}</td>
-              </tr>
-            );
-          })
-        ) : (
-          <tr>
-            <td colSpan={5}>Data Empty</td>
-          </tr>
-        )}
-      </tbody>
-    </Table>
-  );
+    return (
+        <>
+            <h3>List Category</h3>
+            <Link to={`form_category`} className='btn btn-info btn-sm'>Tambah</Link>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nama</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {category.length > 0 ? (
+                        category.map(item => {
+                            return (
+                                <tr key={item.uid}>
+                                    <td>{item.uid}</td>
+                                    <td>
+                                        {item.namaCategory}
+                                    </td>
+                                    <td>
+                                        <Link to={`/category/edit/${item.uid}`} className='btn btn-info btn-sm'>Edit</Link>
+                                        <button className="btn btn-danger btn-sm" onClick={() => { if (window.confirm('Apakah anda yakin menghapus Category ini?')) handleHapusCategory(item.uid) }}>Delete</button>
+                                    </td>
+                                </tr>
+                            );
+                        })
+                    ) : (
+                        <tr>
+                            <td colSpan={5}>Data Empty</td>
+                        </tr>
+                    )}
+                </tbody>
+            </Table>
+
+        </>
+
+    );
 };
 
-export default CartPage;
+export default CategoryPage;
