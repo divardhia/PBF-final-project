@@ -10,11 +10,9 @@ const root = createRoot(container);
 
 root.render(
     <BrowserRouter>
-      <React.StrictMode>
         <Routes>
           <Route path="/*" element={<App />} />
         </Routes>
-      </React.StrictMode>
     </BrowserRouter>
 );
 
