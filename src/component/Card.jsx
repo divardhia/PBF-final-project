@@ -34,13 +34,12 @@ const Card = ({ product, hapus }) => {
                         <h3 className="">{item.nama}</h3>
                         <p className="amount">Jumlah : {amount}</p>
                         <Row>
-                          <button
-                            className="btn btn-warning btn-sm"
-                            as={Link}
-                            to={`/edit/product/${item.uid}`}
+                          {/* <button
+                            <Link to={`/edit/product/${item.uid}`} className='btn btn-info btn-sm'>Edit</Link>
                           >
                             Edit
-                          </button>
+                          </button> */}
+                          <Link to={`/edit/product/${item.uid}`} className='btn btn-info btn-sm'>Edit</Link>
                           <button
                             onClick={() => hapus(item.uid)}
                             className="btn btn-danger btn-sm"
