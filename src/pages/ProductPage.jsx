@@ -25,7 +25,7 @@ const ProductPage = () => {
   }
 
   const deleteProduct = (id) => {
-    var yakin = window.confirm("Apakah kamu yakin menghapus buku ini?");
+    var yakin = window.confirm("Apakah kamu yakin menghapus produk ini?");
 
     if (yakin) {
       remove(ref(db, `/product/${id}`));
